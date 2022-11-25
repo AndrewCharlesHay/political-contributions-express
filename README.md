@@ -1,4 +1,26 @@
-## About
+# Political Race API
+
+I haven't looked too far into it but it seems like the [Google has an API to recieve information about particular political race](https://developers.google.com/civic-information/docs/v2).
+
+# Donations API
+
+So there is preexisting logic on this repo for login verification. I don't know if it is needed or should be used. Either way if I was planning on using [DynamoDB](https://aws.amazon.com/dynamodb/) as the main database. If you(Caroline) could figure out how to standup the Dynamo instance either using the [Docker Image](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html#docker) or [downloading it locally](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html#download-locally) and then use the [SDK](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html) to put an object similar to below in the Database that would be great! The logic should be in a `PUT` command in the route `/donations`
+
+```json
+{
+    "CustomerID": "abc123",
+    "CanidateID": "def456",
+    "CharityID": "hij789",
+    "Donation": {
+        "Amount": "$2.00",
+        "Currency": "USD",
+        "Time": "1669334542",
+        "Platform": "Desktop"
+    }
+}
+```
+
+## About Express
 
 This project was created with [express-generator-typescript](https://github.com/seanpmaxwell/express-generator-typescript).
 
